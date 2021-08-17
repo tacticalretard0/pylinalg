@@ -1,12 +1,13 @@
-# 2d vector and 2x2 matrix
+# 2d vector (also has w) and 3x3 matrix
 
 from math import sqrt, radians, sin, cos
 
 class Vec2:
-    def __init__(self, x=0, y=0):
+    def __init__(self, x=0, y=0, w=1):
         self.x = x
         self.y = y
-
+        
+        self.w = w
     ####
     # RETURNS
 
@@ -102,3 +103,20 @@ class Vec2:
                 return Vec2(self.x / other, self.y / other)
 
             return Vec2()
+
+        if isinstance(other, Mat2):
+            new = Vec2()
+            
+            m = other
+
+            new.x = self.x * m.m[0][0] + self.y * m.m[1][0] + self.w * m.m[2][0]
+            new.y = self.x * m.m[0][1] + self.y * m.m[1][1] + self.w * m.m[2][1]
+
+            new.w = self.x * m.m[0][2] + self.y * m.m[1][2] + self.w * m.m[2][2]
+
+            return new
+
+class Mat2:
+    def __init__(self, lis):
+        self.m = lis
+

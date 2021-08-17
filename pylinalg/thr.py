@@ -1,4 +1,4 @@
-# 3d vector and 4x4 matrix
+# 3d vector (also has w) and 4x4 matrix
 
 from math import sqrt, radians, sin, cos
 

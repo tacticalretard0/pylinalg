@@ -5,7 +5,7 @@ import pylinalg.thr as pyla3
 
 lol = pyla2.Vec2(10, 10)
 
-lol /= 2
+lol /= pyla2.Vec2(2, 3)
 
 print(lol)
 
