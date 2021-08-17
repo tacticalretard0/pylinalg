@@ -9,6 +9,7 @@ import pylinalg.two as pyla2
 correct = {
     "length": 10,
     "get_normalized": pyla2.Vec2(1, 0),
+    "dot": 0,
     "get_rotated": pyla2.Vec2(0, -10),
     "get_rotatedc": pyla2.Vec2(0, 10),
     "get_rounded": pyla2.Vec2(3, 3),
@@ -39,6 +40,8 @@ testvec = pyla2.Vec2(10, 0)
 check(testvec.length(), "length")
 
 check(testvec.get_normalized(), "get_normalized")
+
+check(testvec.get_normalized().dot(pyla2.Vec2(0, -10).get_normalized()), "dot")
 
 check(testvec.get_stepped(5), "get_stepped")
 
