@@ -10,6 +10,9 @@ class Vec3:
 
         self.w = w
 
+    ####
+    # RETURNS
+
     def length(self):
         return sqrt(
             self.x*self.x +
@@ -28,4 +31,17 @@ class Vec3:
         )
 
         return Vec3()
+
+    ####
+    # OPERATOR OVERLOADING
+
+    def __repr__(self):
+        return f"Vec3({self.x}, {self.y}, {self.z})"
+
+    def __eq__(self, other):
+        return (
+            self.x == other.x and
+            self.y == other.y and
+            self.z == other.z
+        )
 

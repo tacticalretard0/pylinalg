@@ -1,4 +1,3 @@
-# test file because why not
 
 import sys
 
@@ -10,11 +9,11 @@ correct = {
     "length": 10,
     "get_normalized": pyla2.Vec2(1, 0),
     "dot": 0,
+    "get_stepped": pyla2.Vec2(15, 0),
     "get_rotated": pyla2.Vec2(0, -10),
     "get_rotatedc": pyla2.Vec2(0, 10),
     "get_rounded": pyla2.Vec2(3, 3),
     "get_truncated": pyla2.Vec2(3, 2),
-    "get_stepped": pyla2.Vec2(15, 0),
 }
 
 def info(passed, res, action):
