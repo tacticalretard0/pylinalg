@@ -3,7 +3,7 @@
 from math import sqrt, radians, sin, cos
 
 class Vec3:
-    def __init__(x=0, y=0, z=0, w=1):
+    def __init__(self, x=0, y=0, z=0, w=1):
         self.x = x
         self.y = y
         self.z = z
@@ -31,6 +31,17 @@ class Vec3:
         )
 
         return Vec3()
+
+    def dot(self, other):
+        return (
+            self.x*other.x +
+            self.y*other.y +
+            self.z*other.z
+        )
+
+    ####
+    # MODIFIES SELF
+        # none yet
 
     ####
     # OPERATOR OVERLOADING
