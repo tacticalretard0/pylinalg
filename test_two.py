@@ -11,7 +11,6 @@ correct = {
     "dot": 0,
     "get_stepped": pyla2.Vec2(15, 0),
     "get_rotated": pyla2.Vec2(0, -10),
-    "get_rotatedc": pyla2.Vec2(0, 10),
     "get_rounded": pyla2.Vec2(3, 3),
     "get_truncated": pyla2.Vec2(3, 2),
 }
@@ -46,10 +45,6 @@ check(testvec.get_stepped(5), "get_stepped")
 
 rotation_test = testvec.get_rotated(90).get_rounded()
 check(rotation_test, "get_rotated")
-
-rotation_test = testvec.get_rotatedc(90).get_rounded()
-check(rotation_test, "get_rotatedc")
-del rotation_test
 
 rounding_truncation_test = pyla2.Vec2(pi, e)
 check(rounding_truncation_test.get_rounded(), "get_rounded")

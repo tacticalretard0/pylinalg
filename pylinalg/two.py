@@ -42,17 +42,6 @@ class Vec2:
 
         return Vec2(newx, newy)
 
-    def get_rotatedc(self, deg):
-        theta = radians(deg)
-
-        st = sin(theta)
-        ct = cos(theta)
-
-        newx = self.x * ct - self.y * st
-        newy = self.x * st + self.y * ct
-
-        return Vec2(newx, newy)
-
     def get_rounded(self, places=0):
         return Vec2(round(self.x, places), round(self.y, places))
 
