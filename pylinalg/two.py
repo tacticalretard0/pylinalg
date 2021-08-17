@@ -47,8 +47,8 @@ class Vec2:
         st = sin(theta)
         ct = cos(theta)
 
-        newx = self.x * ct - y * st
-        newy = self.x * st + y * ct
+        newx = self.x * ct - self.y * st
+        newy = self.x * st + self.y * ct
 
         return Vec2(newx, newy)
 

@@ -12,6 +12,7 @@ correct = {
     "get_rounded": pyla2.Vec2(3, 3),
     "get_truncated": pyla2.Vec2(3, 2),
     "get_rotated": pyla2.Vec2(0, -10),
+    "get_rotatedc": pyla2.Vec2(0, 10),
 }
 
 def info(passed, res, action):
@@ -38,15 +39,16 @@ check(testvec.length(), "length")
 
 check(testvec.get_normalized(), "get_normalized")
 
-get_rounded_test = pyla2.Vec2(pi, e)
-check(get_rounded_test.get_rounded(), "get_rounded")
-del get_rounded_test
+rounding_truncation_test = pyla2.Vec2(pi, e)
+check(rounding_truncation_test.get_rounded(), "get_rounded")
 
-get_truncated_test = pyla2.Vec2(pi, e)
-check(get_truncated_test.get_truncated(), "get_truncated")
-del get_truncated_test
+check(rounding_truncation_test.get_truncated(), "get_truncated")
+del rounding_truncation_test
 
-get_rotated_test = testvec.get_rotated(90).get_rounded()
-check(get_rotated_test, "get_rotated")
-del get_rotated_test
+rotation_test = testvec.get_rotated(90).get_rounded()
+check(rotation_test, "get_rotated")
+
+rotation_test = testvec.get_rotatedc(90).get_rounded()
+check(rotation_test, "get_rotatedc")
+del rotation_test
 
