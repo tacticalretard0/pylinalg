@@ -8,6 +8,7 @@ class Vec2:
         self.y = y
         
         self.w = w
+
     ####
     # RETURNS
 
@@ -104,7 +105,7 @@ class Vec2:
 
             return Vec2()
 
-        if isinstance(other, Mat2):
+        if isinstance(other, Mat3):
             new = Vec2()
             
             m = other
@@ -116,7 +117,7 @@ class Vec2:
 
             return new
 
-class Mat2:
+class Mat3:
     def __init__(self, lis):
         self.m = lis
 
