@@ -94,17 +94,11 @@ class Vec2:
                 new.x /= other.x
             if other.y != 0:
                 new.y /= other.y
-            if other.z != 0:
-                new.z /= other.z
 
             return new
 
         if isinstance(other, (int, float)):
             if other != 0:
-                return Vec2(
-                    self.x / other,
-                    self.y / other,
-                    self.z / other
-                )
+                return Vec2(self.x / other, self.y / other)
 
             return Vec2()
