@@ -47,7 +47,7 @@ class Vec3:
     # OPERATOR OVERLOADING
 
     def __repr__(self):
-        return f"Vec3({self.x}, {self.y}, {self.z})"
+        return f"Vec3({self.x}, {self.y}, {self.z}, w={self.w})"
 
     def __eq__(self, other):
         return (
