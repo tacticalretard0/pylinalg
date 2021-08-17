@@ -24,11 +24,12 @@ class Vec2:
     def dot(self, other):
         return self.x*other.x + self.y*other.y
 
-    def get_rounded(self, places=0):
-        return Vec2(round(self.x, places), round(self.y, places))
+    def get_stepped(self, amount):
+        add = self.get_normalized()
 
-    def get_truncated(self):
-        return Vec2(int(self.x), int(self.y))
+        add *= amount
+
+        return self + add
 
     def get_rotated(self, deg):
         theta = radians(deg)
@@ -51,6 +52,13 @@ class Vec2:
         newy = self.x * st + self.y * ct
 
         return Vec2(newx, newy)
+
+    def get_rounded(self, places=0):
+        return Vec2(round(self.x, places), round(self.y, places))
+
+    def get_truncated(self):
+        return Vec2(int(self.x), int(self.y))
+
 
     def copy(self):
         return Vec2(self.x+0, self.y+0)
@@ -81,4 +89,12 @@ class Vec2:
 
         if isinstance(other, (int, float)):
             return Vec2(self.x - other, self.y - other)
+
+    def __mul__(self, other):
+        if isinstance(other, Vec2):
+            return Vec2(self.x * other.x, self.y * other.y)
+
+        if isinstance(other, (int, float)):
+            return Vec2(self.x * other, self.y * other)
+
 
