@@ -1,3 +1,5 @@
+# 2d vector and 2x2 matrix
+
 from math import sqrt, radians, sin, cos
 
 class Vec2:
