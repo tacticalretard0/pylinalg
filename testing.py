@@ -5,7 +5,12 @@ import pylinalg.thr as pyla3
 
 lol = pyla2.Vec2(10, 10)
 
-lol /= pyla2.Vec2(2, 3)
+mat = pyla2.Mat3(
+    [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1],
+    ]
+)
 
-print(lol)
-
+print(lol * mat)
