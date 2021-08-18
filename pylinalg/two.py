@@ -118,6 +118,26 @@ class Vec2:
             return Vec2()
 
 class Mat3:
-    def __init__(self, lis):
-        self.m = lis
+    def __init__(self, *init):
+        print(init)
+        self.m = [
+                [0, 0, 0],
+                [0, 0, 0],
+                [0, 0, 0]
+        ]
+        
+        if len(init) != 3*3:
+            raise Exception("Mat3: not enough items in initializer")
+        
+        row = 0
+        col = 0
+
+        for item in init:
+            self.m[row][col] = item
+
+            col += 1
+            if col > 2:
+                row += 1
+                col = 0
+
 
