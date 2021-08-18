@@ -119,7 +119,6 @@ class Vec2:
 
 class Mat3:
     def __init__(self, *init):
-        print(init)
         self.m = [
                 [0, 0, 0],
                 [0, 0, 0],
@@ -140,4 +139,16 @@ class Mat3:
                 row += 1
                 col = 0
 
+    ####
+    # OPERATOR OVERLOADING
+
+    def __repr__(self):
+        res = ""
+
+        for row in self.m:
+            for col in row:
+                res += f"{col} "
+            res += '\n'
+
+        return res.strip()
 

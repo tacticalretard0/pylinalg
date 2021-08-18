@@ -11,6 +11,4 @@ mat = pyla2.Mat3(
     0, 1, 0
 )
 
-for row in mat.m:
-    print(row)
-
+print(mat)
