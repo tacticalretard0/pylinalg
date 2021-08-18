@@ -11,4 +11,5 @@ mat = pyla2.Mat3(
     0, 1, 0
 )
 
-print(mat)
+print(lol.get_normalised())
+

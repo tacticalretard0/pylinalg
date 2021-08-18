@@ -9,6 +9,9 @@ class Vec2:
         
         self.w = w
 
+        # aliases
+        self.get_normalised = self.get_normalized
+
     ####
     # RETURNS
 
