@@ -128,19 +128,24 @@ class Mat3:
                 [0, 0, 0]
         ]
         
-        if len(init) != 3*3:
-            raise Exception("Mat3: not enough items in initializer")
-        
         row = 0
         col = 0
-
+        le = 0
         for item in init:
-            self.m[row][col] = item
+            try:
+                self.m[row][col] = item
+            except IndexError:
+                raise Exception("Mat3: too many items in initializer")
 
             col += 1
             if col > 2:
                 row += 1
                 col = 0
+            
+            le += 1
+
+        if le != 3*3:
+            raise Exception("Mat3: not enough items in initializer")
 
     ####
     # OPERATOR OVERLOADING
