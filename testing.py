@@ -3,13 +3,14 @@
 import pylinalg.two as pyla2
 import pylinalg.thr as pyla3
 
-lol = pyla2.Vec2(10, 10)
+chungus = pyla3.Vec3(1, 1, 1)
 
-mat = pyla2.Mat3(
-    0, 1, 0,
-    0, 1, 0,
-    0, 1, 0
+matungus = pyla3.Mat4(
+    2, 0, 0, 0,
+    0, 1, 0, 0,
+    0, 0, 3, 0,
+    0, 0, 0, 10
 )
 
-print(lol.get_normalised())
+print(chungus * matungus)
 
