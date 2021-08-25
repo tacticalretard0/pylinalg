@@ -57,7 +57,11 @@ class Vec3:
     # OPERATOR OVERLOADING
 
     def __repr__(self):
-        return f"Vec3({self.x}, {self.y}, {self.z}, w={self.w})"
+        x = round(self.x, 5)
+        y = round(self.y, 5)
+        z = round(self.z, 5)
+        w = round(self.w, 5)
+        return f"Vec3({x}, {y}, {z}, w={w})"
 
     def __eq__(self, other):
         return (
@@ -176,6 +180,51 @@ class Mat4:
             raise Exception("Mat4: not enough items in initializer")
 
     ####
+    # STATIC METHODS
+
+    @staticmethod
+    def make_rotateX(deg):
+        theta = radians(deg)
+
+        st = sin(theta)
+        ct = cos(theta)
+
+        return Mat4(
+            1,  0,  0,  0,
+            0,  ct, st, 0,
+            0, -st, ct, 0,
+            0,  0,  0,  1
+        )
+
+    @staticmethod
+    def make_rotateY(deg):
+        theta = radians(deg)
+
+        st = sin(theta)
+        ct = cos(theta)
+
+        return Mat4(
+            ct,  0, st, 0,
+            0,   1, 0,  0,
+            -st, 0, ct, 0,
+            0,   0, 0,  1
+        )
+
+    @staticmethod
+    def make_rotateZ(deg):
+        theta = radians(deg)
+
+        st = sin(theta)
+        ct = cos(theta)
+
+        return Mat4(
+            ct,  st, 0, 0,
+            -st, ct, 0, 0,
+            0,   0,  1, 0,
+            0,   0,  0, 1
+        )
+
+    ####
     # OPERATOR OVERLOADING
 
     def __repr__(self):
@@ -183,7 +232,7 @@ class Mat4:
 
         for row in self.m:
             for col in row:
-                res += f"{col} "
+                res += f"{round(col, 5)} "
             res += '\n'
 
         return res.strip()

@@ -65,7 +65,10 @@ class Vec2:
     # OPERATOR OVERLOADING
 
     def __repr__(self):
-        return f"Vec2({self.x}, {self.y}, w={self.w})"
+        x = round(self.x, 5)
+        y = round(self.y, 5)
+        w = round(self.w, 5)
+        return f"Vec2({x}, {y}, w={w})"
 
     def __eq__(self, other):
         return self.x == other.x and self.y == other.y
